@@ -1,0 +1,215 @@
+
+        * {
+            font-family: 'Poppins';
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #374d66;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f4f1f3;
+            padding: 20px 30px;
+            box-shadow: 10px 20px 25px rgba(1, 162, 255, 0.877);
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+            margin-left: auto;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+        }
+
+
+
+        nav a {
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            color: #0890ff;
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+            transition: color 0.3s ease;
+        }
+
+
+        nav a::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgb(18, 45, 136) 0%,
+                    rgb(149, 68, 224) 100%);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            z-index: -1;
+        }
+
+        nav a:hover::before {
+            transform: translateY(0);
+        }
+
+        nav a:hover {
+            color: rgb(35, 136, 230);
+        }
+
+      
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown {
+                display: none;
+            }
+        }
+
+        .btn-menu {
+            color: #191dff;
+            cursor: pointer;
+            border: none;
+            background: #f0f2f4;
+            font-size: 20px;
+            text-align: right;
+
+        }
+
+         .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f2f2f2;
+            min-width: 150px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        @media (max-width: 576px) {
+            .dropdown-content {
+                left: 0;
+            }
+        }
+
+        .dropdown-content a {
+            color: #2326e4;
+            text-decoration: none;
+            padding: 10px 16px;
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3033da;
+            color: rgb(79, 14, 231);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .btn-menu {
+            background-color: #844fff;
+            color: rgb(92, 60, 235);
+        }   
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(190, 156, 150);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+        }
+
+        .card h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #6f33fc;
+        }
+
+        .card p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #4657b8;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #345f8f;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3965e0;
+        }
+
+    
