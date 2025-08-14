@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Challenge</title>
+    
+    <style>
+        
+    .container {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+            
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #333;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        p {
+            color: #555;
+            background-color: #fff;
+            padding: 40px 30;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            
+        }
+        
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-grow: 1;
+        }
+        
+        #changeTextBtn {
+            background-color: #4CAF50;
+            color: rgb(255, 255, 255);
+        }
+        
+        #changeTextBtn:hover {
+            background-color: #3e8e41;
+           
+        }
+        
+        #changeStyleBtn {
+            background-color: #2196F3;
+            color: white;
+            
+        }
+        
+        #changeStyleBtn:hover {
+            background-color: #0b7dda;
+        }
+        
+        .theme-card {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        
+        .theme-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+   <div class="container" id="box">
+    <h1 id="title">DOM Makeover Challenge</h1>
+    <p id="description">This is a simple webpage that needs some style!</p>
+    
+    <div class="button-container">
+        <button id="changeTextBtn">Change Text Content</button>
+        <button id="changeStyleBtn">Change Style</button>
+        
+    </div>
+        
+    
+    
+    <div class="theme-card">
+        <h3>Current Style Theme: <span id="themeName">Default</span></h3>
+        <p></p>
+    </div>
+    </div>
+
+    <script>
+        
+        document.getElementById('changeTextBtn').addEventListener('click', function() {
+            const title = document.getElementById('title');
+            const description = document.getElementById('description');
+           
+            if (title.textContent === 'DOM Makeover Challenge') {
+                title.textContent = 'I manipulate the DOM';
+                description.textContent = 'JavaScript can do everything!';
+                description.textContent = 'maam nag search ko pero  akong ge tun an gamay';
+            } else {
+                title.textContent = 'DOM Makeover Challenge';
+                description.textContent = 'This is a simple webpage that needs some style!';
+            }
+        });
+        
+        
+        const themes = [
+            {
+                name: "Ocean",
+                h1Color: "#FFFFFF",
+                h1BgColor: "#1E88E5",
+                pColor: "#1E88E5",
+                pBgColor: "#E3F2FD"
+            },
+            {
+                name: "Forest",
+                h1Color: "#E8F5E9",
+                h1BgColor: "#388E3C",
+                pColor: "#388E3C",
+                pBgColor: "#E8F5E9"
+            },
+            {
+                name: "Sunset",
+                h1Color: "#FFFFFF",
+                h1BgColor: "#FF7043",
+                pColor: "#FF7043",
+                pBgColor: "#FFF3E0"
+            },
+            {
+                name: "Midnight",
+                h1Color: "#E0E0E0",
+                h1BgColor: "#212121",
+                pColor: "#E0E0E0",
+                pBgColor: "#424242"
+            },
+            {
+                name: "Default",
+                h1Color: "#333",
+                h1BgColor: "#FFFFFF",
+                pColor: "#555",
+                pBgColor: "#FFFFFF"
+            }
+        ];
+        
+        let currentThemeIndex = 0;
+        
+        document.getElementById('changeStyleBtn').addEventListener('click', function() {
+            
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            const theme = themes[currentThemeIndex];
+            
+            
+            const title = document.getElementById('title');
+            const description = document.getElementById('description');
+            const box = document.getElementById('box');
+            title.style.color = theme.h1Color;
+            title.style.backgroundColor = theme.h1BgColor;
+            box.style.backgroundColor = theme.pBgColor;
+            description.style.color = theme.pColor;
+            description.style.backgroundColor = theme.pBgColor;
+            
+            
+            document.getElementById('themeName').textContent = theme.name;
+        });
+    </script>
+</body>
+</html>
